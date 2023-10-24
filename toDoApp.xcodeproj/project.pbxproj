@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B888C522AE8701A00BDD6E6 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B888C512AE8701A00BDD6E6 /* MainTableViewController.m */; };
 		6BD8D1FC2AE1CE5700DA005E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D1FB2AE1CE5700DA005E /* AppDelegate.m */; };
 		6BD8D1FF2AE1CE5700DA005E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D1FE2AE1CE5700DA005E /* SceneDelegate.m */; };
 		6BD8D2022AE1CE5700DA005E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D2012AE1CE5700DA005E /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B888C502AE8701A00BDD6E6 /* MainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		6B888C512AE8701A00BDD6E6 /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		6BD8D1F72AE1CE5700DA005E /* toDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BD8D1FA2AE1CE5700DA005E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6BD8D1FB2AE1CE5700DA005E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				6BD8D2082AE1CE5800DA005E /* LaunchScreen.storyboard */,
 				6BD8D20B2AE1CE5800DA005E /* Info.plist */,
 				6BD8D20C2AE1CE5800DA005E /* main.m */,
+				6B888C502AE8701A00BDD6E6 /* MainTableViewController.h */,
+				6B888C512AE8701A00BDD6E6 /* MainTableViewController.m */,
 			);
 			path = toDoApp;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				6BD8D2022AE1CE5700DA005E /* ViewController.m in Sources */,
 				6BD8D1FC2AE1CE5700DA005E /* AppDelegate.m in Sources */,
 				6BD8D20D2AE1CE5800DA005E /* main.m in Sources */,
+				6B888C522AE8701A00BDD6E6 /* MainTableViewController.m in Sources */,
 				6BD8D1FF2AE1CE5700DA005E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

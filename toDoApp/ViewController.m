@@ -20,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if(self.isDetail){
+        self.textField.text = self.eventInfo;
+        self.datePicker.date = self.eventDate;
+    }
+    
+    self.buttonSave.userInteractionEnabled = NO;
+    
     self.datePicker.minimumDate = [NSDate date];
     
     [self.datePicker addTarget:self action:@selector(datePickerValueChanged) forControlEvents:UIControlEventValueChanged ];
@@ -36,7 +43,22 @@
     NSLog(@"selected date %@", self.eventDate);
 }
 
--(void) saveTask {
+- (void)saveTask {
+    if (!self.eventDate) {
+        [self showAlertMessage:@"Для сохранения события измените значение даты на более позднее"];
+        return;
+    }
+    
+    NSComparisonResult comparisonResult = [self.eventDate compare:[NSDate date]];
+    if (comparisonResult == NSOrderedSame || comparisonResult == NSOrderedAscending) {
+        [self showAlertMessage:@"Для сохранения события измените значение даты на более позднее"];
+    } else {
+        [self setNotification];
+    }
+}
+
+
+-(void) setNotification {
     NSString * eventInfo = self.textField.text;
     NSDateFormatter * formater = [[NSDateFormatter alloc] init];
     formater.dateFormat = @"HH:mm dd:MMMM:yyyy";
@@ -65,9 +87,28 @@
     
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self.textField resignFirstResponder];
+    if (![self.textField.text isEqualToString:@""]) {
+        [self.textField resignFirstResponder];
+        self.buttonSave.userInteractionEnabled = YES;
+    }
+    else {
+        [self showAlertMessage:@"Введите значение в текстовое поле"];
+    }
     
     return YES;
 }
+
+
+- (void)showAlertMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Внимание!" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 
 @end
