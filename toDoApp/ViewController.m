@@ -22,6 +22,10 @@
     
     if(self.isDetail){
         self.textField.text = self.eventInfo;
+        self.textField.userInteractionEnabled = NO;
+        self.datePicker.userInteractionEnabled = NO;
+        self.buttonSave.alpha = 0;
+        
         self.datePicker.date = self.eventDate;
     }
     
